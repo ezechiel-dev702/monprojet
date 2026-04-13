@@ -1,0 +1,190 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f0f2f5; /* Couleur de fond neutre pour faire ressortir le bloc */
+    display: flex;
+    justify-content: center; /* Centre le container au milieu de l'écran */
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+#container {
+    display: flex;            /* Aligne les deux boites côte à côte */
+    width: 100vw;  
+    height: 100vh;           /* Largeur équilibrée pour les deux sections */
+    background-color: #000;   /* Fond noir pour tout le container */
+    border-radius: 15px;      /* Arrondi élégant comme sur les captures */
+    overflow: hidden;         /* Pour que l'image respecte l'arrondi du container */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* Section de gauche (Image) */
+.boitegauche {
+    flex: 1;                  /* Prend 50% de l'espace */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;   /* Fond blanc pour l'image si nécessaire */
+}
+
+.boitegauche img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;        /* L'image remplit l'espace sans se déformer */
+}
+
+/* Section de droite (Formulaire) */
+.boitedroite {
+    flex: 1;                  /* Prend les autres 50% */
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* --- Vos styles originaux conservés --- */
+
+h1 {
+    color: #ccc;
+    text-align: center;
+    margin-bottom: 30px;
+    animation: rotate 2.2s infinite;
+}
+
+@keyframes rotate {
+    0% { text-shadow: 0 0 10px #00f2ff, 5px 0 20px #00f2ff; color: #fff; }
+    50% { text-shadow: 0 0 10px #7000ff, -5px 0 20px #7000ff; color: #fdfdfd; }
+    100% { text-shadow: 0 0 10px #00f2ff, 5px 0 20px #00f2ff; color: #fff; }
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* Espace réduit pour mieux tenir dans le bloc */
+    width: 100%;
+    max-width: 300px;
+    margin: auto;
+}
+
+.modification {
+    width: 100%;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid #333;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.modification:focus {
+    border-color: #00f2ff;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 15px rgba(0, 242, 255, 0.4);
+    transform: scale(1.02);
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(45deg, #00f2ff, #7000ff);
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+button:hover {
+    letter-spacing: 2px;
+    box-shadow: 0 0 25px rgba(0, 242, 255, 0.6);
+    transform: translateY(-3px);
+}
+
+
+.boitedroite {
+    flex: 1;
+    position: relative; /* Indispensable pour positionner la vidéo dedans */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Empêche la vidéo de déborder */
+}
+
+#background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Remplit l'espace sans déformer la vidéo */
+    z-index: 1;        /* Place la vidéo en arrière */
+}
+
+/* On force le titre et le formulaire à passer au-dessus de la vidéo (z-index supérieur) */
+h1, form {
+    position: relative;
+    z-index: 2;
+}
+
+/* Optionnel : Ajouter un léger voile sombre sur la vidéo pour que le texte reste lisible */
+.boitedroite::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Ajuste l'opacité (0.4) selon tes besoins */
+    z-index: 1.5;
+}
+
+
+/* Conteneur pour l'inscription */
+.zone-inscription {
+    position: relative;
+    z-index: 2; /* Assure la visibilité au-dessus de la vidéo */
+    margin-top: 30px;
+    text-align: center;
+    width: 100%;
+    max-width: 300px; /* Aligné sur la largeur de ton formulaire */
+}
+
+.zone-inscription p {
+    color: #ccc;
+    font-size: 13px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Le bouton d'inscription (Style Fantôme / Outline) */
+.btn-inscription {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    text-decoration: none;
+    background: transparent;
+    color: #00f2ff; /* Ton bleu néon actuel */
+    border: 2px solid #00f2ff;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: all 0.4s ease;
+    text-align: center;
+}
+
+.btn-inscription:hover {
+    background: rgba(0, 242, 255, 0.1);
+    box-shadow: 0 0 20px rgba(0, 242, 255, 0.5);
+    letter-spacing: 2px; /* Reprise de ton effet sur le bouton Connexion */
+    transform: translateY(-3px);
+}
