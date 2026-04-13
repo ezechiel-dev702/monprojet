@@ -1,0 +1,113 @@
+body {
+    background-color: #f8fafc; /* Gris bleuté très clair et moderne */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#container {
+    background-color: white;
+    border-radius: 16px; /* Arrondi plus prononcé pour un look moderne */
+    padding: 50px 35px;
+    width: 420px;
+    /* Ombre multicouche pour un effet de flottement réel */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05), 
+                0 20px 48px rgba(0, 0, 0, 0.05),
+                0 1px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* --- Typographie avec ombres --- */
+
+.glow-text {
+    font-size: 26px;
+    font-weight: 800;
+    color: #1e293b;
+    margin-bottom: 15px;
+    /* Ombre de texte subtile pour faire ressortir les lettres */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.sub-text {
+    font-size: 15px;
+    color: #64748b;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* --- Formulaire et Inputs --- */
+
+.recovery-form {
+    width: 100%;
+}
+
+.input-group {
+    text-align: left;
+    margin-bottom: 25px;
+    width: 100%;
+}
+
+.input-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #475569;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+input[type="email"] {
+    width: 100%;
+    padding: 14px;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+input[type="email"]:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+}
+
+/* --- Bouton avec Gradient --- */
+
+.btn-send {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+.btn-send:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(37, 99, 235, 0.3);
+}
+
+.back-link {
+    margin-top: 25px;
+    font-size: 14px;
+    color: #94a3b8;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.back-link:hover {
+    color: #3b82f6;
+}
