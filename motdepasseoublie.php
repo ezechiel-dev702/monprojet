@@ -21,6 +21,13 @@
         </form>
 
         <a href="formulaire.php" class="back-link">Retour à la connexion</a>
+
+        <div class="background-container">
+               <div class="circle"></div>
+               <div class="circle"></div>
+               <div class="circle"></div>
+               <div class="circle"></div>
+         </div>
     </div>
 
 </body>
