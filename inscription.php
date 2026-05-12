@@ -56,7 +56,7 @@
                 </div>
 
                 <button type="submit" class="btn-submit">SCELLER L'INSCRIPTION</button>
-                <p class="footer-link">Déjà inscrit ? <a href="index.php">Se connecter</a></p>
+                <p class="footer-link">Déjà inscrit ? <a href="formulaire.php">Se connecter</a></p>
             </form>
         </div>
     </div>
