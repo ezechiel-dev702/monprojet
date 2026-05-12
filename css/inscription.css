@@ -1,0 +1,185 @@
+:root {
+    --gold: #C5A028;
+    --forest: #004d2c;
+    --dark-text: #2d2d2d;
+    --light-bg: #f4f7f6; /* Un gris très léger pour faire ressortir le blanc du formulaire */
+    --input-bg: #f8f9fa;
+    --shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--light-bg);
+}
+
+.main-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    /* Optionnel : ajout d'un fond léger pour l'ambiance */
+    background: linear-gradient(135deg, #f4f7f6 0%, #e2e8e7 100%);
+}
+
+.form-panel {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.glass-form {
+    width: 100%;
+    max-width: 600px;
+    background: white;
+    padding: 40px 50px;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+}
+
+/* En-tête pour compenser la perte du panneau de gauche */
+.brand-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.brand-header h1 {
+    font-family: 'Playfair Display', serif;
+    color: var(--gold);
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.brand-header .slogan {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 5px;
+}
+
+h2 {
+    text-align: center;
+    letter-spacing: 2px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--forest);
+    margin-bottom: 30px;
+    border-bottom: 2px solid var(--gold);
+    display: inline-block;
+    width: 100%;
+    padding-bottom: 10px;
+}
+
+.section-title {
+    color: var(--gold);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin: 25px 0 15px 0;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.section-title::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: rgba(197, 160, 40, 0.2);
+    margin-left: 15px;
+}
+
+.input-group {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.full-width-input {
+    margin-bottom: 15px;
+}
+
+.full-width-input input {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.date-group {
+    margin-bottom: 15px;
+}
+
+.date-group input {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input {
+    flex: 1;
+    padding: 12px 15px;
+    background: var(--input-bg);
+    border: 1px solid #ddd;
+    color: var(--dark-text);
+    border-radius: 8px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    border-color: var(--gold);
+    background: white;
+    outline: none;
+    box-shadow: 0 4px 12px rgba(197, 160, 40, 0.1);
+}
+
+label {
+    font-size: 0.8rem;
+    color: #888;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 16px;
+    margin-top: 30px;
+    background: var(--forest);
+    border: none;
+    color: white;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-submit:hover {
+    background: #006339;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 77, 44, 0.2);
+}
+
+.footer-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.footer-link a { 
+    color: var(--forest); 
+    text-decoration: none; 
+    font-weight: 600;
+}
+
+/* Ajustement mobile */
+@media (max-width: 600px) {
+    .glass-form {
+        padding: 30px 20px;
+    }
+    .input-group {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
