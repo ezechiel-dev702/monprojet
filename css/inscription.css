@@ -8,11 +8,12 @@
 }
 
 body, html {
-    margin: 0;
+   margin: 0;
     padding: 0;
     height: 100%;
     font-family: 'Poppins', sans-serif;
-    background-color: var(--light-bg);
+    /* Un fond neutre pour mettre en valeur le formulaire */
+    background-color: #f0f2f5;
 }
 
 .main-wrapper {
@@ -31,13 +32,54 @@ body, html {
     justify-content: center;
 }
 
+
 .glass-form {
     width: 100%;
-    max-width: 600px;
-    background: white;
+    max-width: 650px;
+    background: rgba(255, 255, 255, 0.65); /* Plus transparent pour l'effet verre */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    
     padding: 40px 50px;
     border-radius: 20px;
-    box-shadow: var(--shadow);
+    
+    /* Bordure blanche brillante pour simuler l'épaisseur du verre */
+    background: rgba(255, 255, 255, 0.4);
+    
+    /* Ombre externe douce + lueur interne (inset) */
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.1), 
+        inset 0 0 15px rgba(255, 255, 255, 0.5);
+    
+    position: relative;
+    overflow: hidden;
+
+    /* Configuration de l'emblème en fond */
+    background-image: url('../assets/logoafrique1.png');
+    background-repeat: no-repeat;
+    background-position: 50% 38%;
+    background-size: 155%; 
+    background-blend-mode: normal; /* Fusionne l'image délicatement */
+}
+
+
+.glass-form::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.1) 45%,
+        rgba(255, 255, 255, 0.2) 50%,
+        rgba(255, 255, 255, 0.1) 55%,
+        transparent 100%
+    );
+    transform: rotate(-20deg);
+    pointer-events: none; /* Permet de cliquer sur les champs dessous */
 }
 
 /* En-tête pour compenser la perte du panneau de gauche */
@@ -48,7 +90,7 @@ body, html {
 
 .brand-header h1 {
     font-family: 'Playfair Display', serif;
-    color: var(--gold);
+    color:  #1e293b;
     font-size: 2.5rem;
     margin: 0;
 }
@@ -64,16 +106,16 @@ h2 {
     letter-spacing: 2px;
     font-size: 1.2rem;
     font-weight: 700;
-    color: var(--forest);
+    color: #1e293b;
     margin-bottom: 30px;
-    border-bottom: 2px solid var(--gold);
+    border-bottom:  #1e293b;
     display: inline-block;
     width: 100%;
     padding-bottom: 10px;
 }
 
 .section-title {
-    color: var(--gold);
+    color:  #1e293b;
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 1.5px;
@@ -118,20 +160,20 @@ h2 {
 input {
     flex: 1;
     padding: 12px 15px;
-    background: var(--input-bg);
-    border: 1px solid #ddd;
+    background: rgba(255, 255, 255, 0.9); /* Fond très clair et opaque pour le texte */
+    border: 1px solid rgba(200, 200, 200, 0.3);
     color: var(--dark-text);
-    border-radius: 8px;
+    border-radius: 10px;
     font-size: 0.9rem;
     transition: all 0.3s ease;
 }
-
-input:focus {
+ input:focus {
     border-color: var(--gold);
-    background: white;
+    background: #ffffff;
+    box-shadow: 0 0 15px rgba(197, 160, 40, 0.2);
     outline: none;
-    box-shadow: 0 4px 12px rgba(197, 160, 40, 0.1);
 }
+   
 
 label {
     font-size: 0.8rem;
@@ -144,7 +186,7 @@ label {
     width: 100%;
     padding: 16px;
     margin-top: 30px;
-    background: var(--forest);
+    background: linear-gradient(45deg, #00f2ff, #7000ff);
     border: none;
     color: white;
     font-weight: 600;
@@ -155,7 +197,7 @@ label {
 }
 
 .btn-submit:hover {
-    background: #006339;
+
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0, 77, 44, 0.2);
 }
@@ -168,7 +210,7 @@ label {
 }
 
 .footer-link a { 
-    color: var(--forest); 
+    color:#3b61fa; 
     text-decoration: none; 
     font-weight: 600;
 }
